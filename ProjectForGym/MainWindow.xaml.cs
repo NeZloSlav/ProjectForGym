@@ -1,7 +1,11 @@
-﻿using System;
+﻿using ProjectForGym.Classes;
+using ProjectForGym.Database;
+using ProjectForGym.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,9 +24,12 @@ namespace ProjectForGym
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UserDB userDB = new UserDB();
         public MainWindow()
         {
             InitializeComponent();
+
+            UpdateList();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -31,6 +38,31 @@ namespace ProjectForGym
             {
                 this.DragMove();
             }
+        }
+
+        private void TbxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateList();
+        }
+
+
+        private void UpdateList()
+        {
+            var currentList = userDB.GetUsers();
+
+            currentList = currentList.Where(c => (c.Surname + " " + c.Name + " " + c.Patronymic).ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
+
+            listViewUsers.ItemsSource = currentList.OrderBy(p => p.Name).ToList();
+        }
+
+        private void BtnCheck_Click(object sender, RoutedEventArgs e)
+        {
+            var boundData = (User)((Button)sender).DataContext;
+
+            EditUserWindow editUser = new EditUserWindow(boundData.Surname, boundData.Name, boundData.Patronymic);
+            editUser.ShowDialog();
+
+            UpdateList();
         }
     }
 }

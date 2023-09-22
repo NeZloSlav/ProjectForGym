@@ -8,6 +8,7 @@
         Title="MainWindow"
         Height="600"
         Width="700"
+        WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
@@ -21,7 +22,7 @@
         <!--Поисковая строка-->
 
         <Border VerticalAlignment="Bottom" Width="400" Margin="0 0 0 20">
-            <TextBox FontSize="20" BorderThickness="2" BorderBrush="DimGray">
+            <TextBox x:Name="TbxSearch" FontSize="14" Padding="3" BorderThickness="2" BorderBrush="DimGray" TextChanged="TbxSearch_TextChanged" >
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10" />
@@ -34,10 +35,41 @@
         <!--Табличная часть-->
 
         <Border Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                CornerRadius="10" BorderBrush="DimGray" BorderThickness="2" MinWidth="400" MinHeight="400">
+                CornerRadius="10" BorderBrush="DimGray" BorderThickness="2" MinWidth="600" MinHeight="400">
             <Grid Margin="5">
-                <ListView>
-                    
+                <ListView x:Name="listViewUsers" FontSize="14">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Width="120">Фамилия</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="120">Имя</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Patronymic}" Width="120">Отчество</GridViewColumn>
+                            <GridViewColumn Header="Действие" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Button x:Name="BtnCheck" Content="+" DockPanel.Dock="Left" Click="BtnCheck_Click"/>
+                                            <Button x:Name="BtnEdit" Content="?" Margin="5 0 0 0" DockPanel.Dock="Right"/>
+
+                                            <DockPanel.Resources>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background" Value="LightGray" />
+                                                    <Setter Property="Width" Value="25" />
+                                                    <Setter Property="Height" Value="25" />
+
+                                                    <Style.Resources>
+                                                        <Style TargetType="Border">
+                                                            <Setter Property="CornerRadius" Value="5" />
+                                                        </Style>
+                                                    </Style.Resources>
+
+                                                </Style>
+                                            </DockPanel.Resources>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
                 </ListView>
             </Grid>
         </Border>
