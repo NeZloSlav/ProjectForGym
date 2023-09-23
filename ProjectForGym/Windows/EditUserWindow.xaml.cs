@@ -40,5 +40,12 @@ namespace ProjectForGym.Windows
                 this.DragMove();
             }
         }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            TbxSurname.IsEnabled = true;
+            TbxName.IsEnabled = true;
+            TbxPatronymic.IsEnabled = true;
+        }
     }
 }

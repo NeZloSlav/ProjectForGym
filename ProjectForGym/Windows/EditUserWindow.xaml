@@ -18,11 +18,11 @@
             <RowDefinition Height="4*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        
+
         <!--Заголовок-->
 
         <Grid>
-            
+
             <!--Оглавление-->
             <TextBlock Text="Редактирование клиента" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 10" FontSize="35"/>
 
@@ -30,7 +30,7 @@
             <!--Разделитель-->
             <Border BorderBrush="Black" BorderThickness="1" Width="500" Height="2" VerticalAlignment="Bottom" CornerRadius="0.5"/>
         </Grid>
-        
+
         <!--Форма-->
 
         <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 100 0 0">
@@ -62,6 +62,7 @@
                     <Setter Property="FontSize" Value="18" />
                     <Setter Property="Width" Value="200" />
                     <Setter Property="Padding" Value="3 2" />
+                    <Setter Property="IsEnabled" Value="False" />
 
                     <Style.Resources>
                         <Style TargetType="Border">
@@ -75,16 +76,21 @@
         <!--Навигация-->
 
         <Grid Grid.Row="2" VerticalAlignment="Center">
-            <Button VerticalAlignment="Center" HorizontalAlignment="Left" Margin="100 0 0 0">
-                Редактировать
-            </Button>
+            <Button x:Name="BtnEdit"
+                    Content="Редактировать"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Left" 
+                    Margin="100 0 0 0"
+                    Click="BtnEdit_Click"/>
 
-            <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 100 0">
-                Сохранить
-            </Button>
+            <Button x:Name="BtnSave"
+                    Content="Сохранить"
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Left" 
+                    Margin="480,0,0,0"/>
 
             <Grid.Resources>
-                <Style TargetType="Button">
+                <Style x:Name="txbInputStyle" TargetType="Button">
                     <Setter Property="FontSize" Value="16" />
                     <Setter Property="Background" Value="DimGray" />
                     <Setter Property="BorderBrush" Value="Black" />
