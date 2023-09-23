@@ -63,5 +63,13 @@ namespace ProjectForGym
 
             UpdateList();
         }
+
+        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserWindow addUser = new AddUserWindow();
+            addUser.ShowDialog();
+
+            UpdateList();
+        }
     }
 }

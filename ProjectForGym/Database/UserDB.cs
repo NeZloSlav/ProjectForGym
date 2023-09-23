@@ -24,21 +24,21 @@ namespace ProjectForGym.Database
             return users;
         }
 
-        public static User Add(int id, string surname, string name, string patronymic)
+        public static User Add(string surname, string name, string patronymic)
         {
-            User newUser = new User(id, surname, name, patronymic);
+            User newUser = new User(User.increment, surname, name, patronymic);
             users.Add(newUser);
             return newUser;
         }
 
         public static void Delete(int id)
         {
-            users.Remove(users[id]);
+            users.Remove(users[id - 1]);
         }
 
         public static void Update(int id, string surname, string name, string patronymic)
         {
-            users[id] = new User(id, surname, name, patronymic);
+            users[id - 1] = new User(id, surname, name, patronymic);
         }
 
 

@@ -21,7 +21,7 @@ namespace ProjectForGym.Windows
     /// </summary>
     public partial class EditUserWindow : Window
     {
-        private User? currentUser;
+        private User currentUser;
         private bool IsEdit;
         public EditUserWindow()
         {
@@ -77,6 +77,18 @@ namespace ProjectForGym.Windows
             }
         }
 
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var answer = MessageBox.Show("Вы уверены, что хотите удалить клиента из базы?", "Подтверждение", MessageBoxButton.YesNo);
+
+            if (answer == MessageBoxResult.Yes)
+            {
+                UserDB.Delete(currentUser.Id);
+                Close();
+            }
+
+        }
+
         private void DisenableForms()
         {
             IsEdit = false;
@@ -88,5 +100,7 @@ namespace ProjectForGym.Windows
             BtnEdit.IsEnabled = true;
 
         }
+
+        
     }
 }
