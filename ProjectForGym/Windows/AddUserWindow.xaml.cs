@@ -49,7 +49,7 @@ namespace ProjectForGym.Windows
             }
             else
             {
-                UserDB.Add(TbxSurname.Text, TbxName.Text, TbxPatronymic.Text);
+                UserDB.Add(TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(dtPickerLastPay.Text));
                 MessageBox.Show("Данные о клиенте занесены в базу", "Успешно!");
                 ClearForms();
             }

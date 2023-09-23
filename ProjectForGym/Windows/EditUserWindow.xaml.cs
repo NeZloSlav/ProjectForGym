@@ -61,7 +61,8 @@ namespace ProjectForGym.Windows
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             DisenableForms();
-            UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text);
+            UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(dtPickerLastPay.Text));
+            Close();
 
         }
 

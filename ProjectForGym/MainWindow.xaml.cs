@@ -49,12 +49,35 @@ namespace ProjectForGym
         {
             var currentList = UserDB.GetUsers();
 
-            currentList = currentList.Where(c => (c.Surname + " " + c.Name + " " + c.Patronymic).ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
+            if (cmbSearch.SelectedIndex == 0)
+            {
+                currentList = currentList.Where(c => (c.Surname + " " + c.Name + " " + c.Patronymic).ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
 
-            listViewUsers.ItemsSource = currentList.OrderBy(p => p.Name).ToList();
+                listViewUsers.ItemsSource = currentList.OrderBy(p => p.Surname).ToList();
+            }
+            else if (cmbSearch.SelectedIndex == 1)
+            {
+                currentList = currentList.Where(c => c.Name.ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
+
+                listViewUsers.ItemsSource = currentList.OrderBy(p => p.Name).ToList();
+            }
+            else if (cmbSearch.SelectedIndex == 2)
+            {
+                currentList = currentList.Where(c => c.Surname.ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
+
+                listViewUsers.ItemsSource = currentList.OrderBy(p => p.Surname).ToList();
+            }
+            else
+            {
+                currentList = currentList.Where(c => c.LastPayment.Date.ToString().ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
+
+                listViewUsers.ItemsSource = currentList.OrderBy(p => p.LastPayment).ToList();
+            }
+
+            
         }
 
-        private void BtnCheck_Click(object sender, RoutedEventArgs e)
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             var boundData = (User)((Button)sender).DataContext;
 
@@ -70,6 +93,27 @@ namespace ProjectForGym
             addUser.ShowDialog();
 
             UpdateList();
+        }
+
+        private void TbxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TbckSearchText.Visibility = Visibility.Hidden;
+        }
+
+        private void TbxSearch_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (TbxSearch.Text == string.Empty)
+            {
+                TbckSearchText.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void BtnMark_Click(object sender, RoutedEventArgs e)
+        {
+            var boundData = (User)((Button)sender).DataContext;
+
+            MarkWindow markWindow = new MarkWindow(boundData);
+            markWindow.ShowDialog();
         }
     }
 }

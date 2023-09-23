@@ -81,29 +81,93 @@
 
         <!--Форма-->
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 100 0 0">
-
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 75 0 0">
             <StackPanel>
-                <TextBlock Text="Фамилия" Style="{StaticResource textBlockInputStyle}" />
-                <TextBox x:Name="TbxSurname" Margin="0 3 0 20" Style="{StaticResource textBoxInputStyle}"/>
+
+                <StackPanel>
+
+                    <TextBlock Text="Фамилия" 
+                           Style="{StaticResource textBlockInputStyle}"/>
+
+                    <TextBox x:Name="TbxSurname" 
+                         Style="{StaticResource textBoxInputStyle}"
+                         Margin="0 3 0 20"/>
+
+                </StackPanel>
+
+                <StackPanel>
+
+                    <TextBlock Text="Имя"
+                           Style="{StaticResource textBlockInputStyle}"/>
+
+                    <TextBox x:Name="TbxName" 
+                         Style="{StaticResource textBoxInputStyle}"
+                         Margin="0 3 0 20"/>
+
+                </StackPanel>
+
+                <StackPanel>
+
+                    <TextBlock Text="Отчество" 
+                           Style="{StaticResource textBlockInputStyle}"/>
+
+                    <TextBox x:Name="TbxPatronymic"
+                         Style="{StaticResource textBoxInputStyle}"
+                         Margin="0 3 0 20"/>
+
+                </StackPanel>
+
             </StackPanel>
 
-            <StackPanel>
-                <TextBlock Text="Имя" Style="{StaticResource textBlockInputStyle}"/>
-                <TextBox x:Name="TbxName" Margin="0 3 0 20" Style="{StaticResource textBoxInputStyle}"/>
+            <StackPanel Margin="50 0 0 0">
+
+                <StackPanel>
+
+                    <TextBlock Text="Дата оплаты"
+                       Style="{StaticResource textBlockInputStyle}"/>
+
+                    <Border Width="200" 
+                            CornerRadius="10" 
+                            BorderBrush="Gray"
+                            BorderThickness="1" 
+                            Height="30"
+                            Margin="0 3 0 20"
+                            Padding="5 3">
+
+                        <DatePicker x:Name="dtPickerLastPay" FontSize="15" BorderThickness="0" Padding="0"/>
+
+                    </Border>
+
+                </StackPanel>
+
+                <StackPanel>
+
+                    <TextBlock Text="Тариф"
+                       Style="{StaticResource textBlockInputStyle}"/>
+
+                    <ComboBox x:Name="cmb"
+                              FontSize="18"
+                              Height="30"
+                              Margin="0 3 0 0">
+
+                        <ComboBoxItem>10 дней</ComboBoxItem>
+                        <ComboBoxItem>Месяц</ComboBoxItem>
+                        <ComboBoxItem>3 месяца</ComboBoxItem>
+                    </ComboBox>
+
+
+
+                </StackPanel>
+
+                <Button x:Name="BtnDelete"
+                        Style="{StaticResource txbInputStyle}"
+                        Content="Удалить клиента"
+                        Margin="0 50 0 0"
+                        Width="auto"
+                        Background="DarkRed"
+                        Click="BtnDelete_Click"/>
+
             </StackPanel>
-
-            <StackPanel>
-                <TextBlock Text="Отчество" Style="{StaticResource textBlockInputStyle}" />
-                <TextBox x:Name="TbxPatronymic" Style="{StaticResource textBoxInputStyle}"/>
-            </StackPanel>
-
-            <Button x:Name="BtnDelete"
-                    Content="Удалить"
-                    Style="{StaticResource txbInputStyle}"
-                    Margin="0 30 0 0"
-                    Background="DarkRed" Click="BtnDelete_Click"/>
-
         </StackPanel>
 
         <!--Навигация-->

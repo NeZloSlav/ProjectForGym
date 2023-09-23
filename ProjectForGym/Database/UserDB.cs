@@ -13,10 +13,10 @@ namespace ProjectForGym.Database
 
         static UserDB()
         {
-            users.Add(new User(1, "Биба", "Биба", "Бибачов"));
-            users.Add(new User(2, "Боба", "Боба", "Бобачов"));
-            users.Add(new User(3, "Находнов", "Вячеслав", "Сергеевич"));
-            users.Add(new User(4, "Петченко", "Алексей", "Валерьевич"));
+            users.Add(new User(1, "Биба", "Биба", "Бибачов", DateTime.Parse("20.09.2023"), new List<DateTime> {DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
+            users.Add(new User(2, "Боба", "Боба", "Бобачов", DateTime.Parse("19.09.2023"), new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
+            users.Add(new User(3, "Находнов", "Вячеслав", "Сергеевич", DateTime.Parse("18.09.2023"), new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
+            users.Add(new User(4, "Петченко", "Алексей", "Валерьевич", DateTime.Parse("19.09.2023"), new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
         }
 
         public static List<User> GetUsers()
@@ -24,9 +24,9 @@ namespace ProjectForGym.Database
             return users;
         }
 
-        public static User Add(string surname, string name, string patronymic)
+        public static User Add(string surname, string name, string patronymic, DateTime lastPay)
         {
-            User newUser = new User(User.increment, surname, name, patronymic);
+            User newUser = new User(surname, name, patronymic, lastPay);
             users.Add(newUser);
             return newUser;
         }
@@ -36,9 +36,9 @@ namespace ProjectForGym.Database
             users.Remove(users[id - 1]);
         }
 
-        public static void Update(int id, string surname, string name, string patronymic)
+        public static void Update(int id, string surname, string name, string patronymic, DateTime lastPay)
         {
-            users[id - 1] = new User(id, surname, name, patronymic);
+            users[id - 1] = new User(id, surname, name, patronymic, lastPay);
         }
 
 

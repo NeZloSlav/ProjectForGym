@@ -22,15 +22,55 @@
         
         <!--Поисковая строка-->
 
-        <Border VerticalAlignment="Bottom" Width="400" Margin="0 0 0 20">
-            <TextBox x:Name="TbxSearch" FontSize="14" Padding="3" BorderThickness="2" BorderBrush="DimGray" TextChanged="TbxSearch_TextChanged" >
-                <TextBox.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10" />
-                    </Style>
-                </TextBox.Resources>
+        <Border VerticalAlignment="Bottom" Width="550" Margin="0 0 0 20">
+            <Grid>
+                <TextBox x:Name="TbxSearch"
+                         FontSize="14"
+                         Padding="5 3" 
+                         BorderThickness="2"
+                         BorderBrush="DimGray" 
+                         Background="Transparent"
+                         HorizontalAlignment="Left"
+                         Width="400"
+                         TextChanged="TbxSearch_TextChanged"
+                         GotFocus="TbxSearch_GotFocus"
+                         LostFocus="TbxSearch_LostFocus"
+                         Panel.ZIndex="1">
+
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </TextBox.Resources>
+
+                </TextBox>
+
+                <TextBlock x:Name="TbckSearchText"
+                           FontSize="14"
+                           Text="Поиск..."
+                           Foreground="Gray"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="7 2"
+                           Panel.ZIndex="0"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+
+                    <TextBlock Text="по"
+                               VerticalAlignment="Center"
+                               FontSize="14"
+                               Margin="5 0 7 0"/>
+
+                    <ComboBox x:Name="cmbSearch" Width="120" FontSize="14" SelectedIndex="0">
+                        <ComboBoxItem>ФИО</ComboBoxItem>
+                        <ComboBoxItem>Имени</ComboBoxItem>
+                        <ComboBoxItem>Фамилии</ComboBoxItem>
+                        <ComboBoxItem>Дате</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
                 
-            </TextBox>
+            </Grid>
         </Border>
         
         <!--Табличная часть-->
@@ -39,17 +79,23 @@
                 CornerRadius="10" BorderBrush="DimGray" BorderThickness="2" MinWidth="600" MinHeight="400">
             <Grid Margin="5">
                 <ListView x:Name="listViewUsers" FontSize="14">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Width="120">Фамилия</GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="120">Имя</GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=Patronymic}" Width="120">Отчество</GridViewColumn>
-                            <GridViewColumn Header="Действие" Width="120">
+                            <GridViewColumn x:Name="grdViewColumnLastPay" DisplayMemberBinding="{Binding Path=LastPayment, StringFormat='dd.MM.yyyy'}" Width="110" Header="Посл. оплата"/>
+                            <GridViewColumn Header="Действие" Width="70">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <Button x:Name="BtnCheck" Content="+" DockPanel.Dock="Left" Click="BtnCheck_Click"/>
-                                            <Button x:Name="BtnEdit" Content="?" Margin="5 0 0 0" DockPanel.Dock="Right"/>
+                                        <DockPanel>
+                                            <Button x:Name="BtnMark" Content="+" DockPanel.Dock="Left" Click="BtnMark_Click"/>
+                                            <Button x:Name="BtnEdit" Content="?" Margin="5 0 0 0" DockPanel.Dock="Right" Click="BtnEdit_Click"/>
 
                                             <DockPanel.Resources>
                                                 <Style TargetType="Button">
@@ -80,8 +126,8 @@
         <Grid Grid.Row="2">
             <Button x:Name="BtnAddUser"
                     Content="Добавить клиента"
-                    HorizontalAlignment="Left"
-                    Margin="100 0 0 0"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 50 0"
                     Click="BtnAddUser_Click"/>
 
             

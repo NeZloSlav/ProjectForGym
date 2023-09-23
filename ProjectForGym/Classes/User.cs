@@ -15,28 +15,48 @@ namespace ProjectForGym.Classes
         public string Name { get; set; }
         public string Patronymic { get; set; }
 
-        public User()
-        {
-            Id = UserDB.GetUsers().Count;
-            Surname = "Не задано";
-            Name = "Не задано"; 
-            Patronymic = "Не задано";
-        }
+        public DateTime LastPayment { get; set; }
 
-        public User(string surname, string name, string patronymic)
-        {
-            Id = increment;
-            Surname = surname;
-            Name = name;
-            Patronymic = patronymic;
-        }
+        public List<DateTime>? MarkDates { get; set; }
 
-        public User(int id, string surname, string name, string patronymic)
+        public User() { }
+
+        public User(int id, string surname, string name, string patronymic, DateTime lastPay, List<DateTime> markDates)
         {
             Id = id;
             Surname = surname;
             Name = name;
             Patronymic = patronymic;
+            LastPayment = lastPay;
+            MarkDates = markDates;
+        }
+
+        public User(string surname, string name, string patronymic, DateTime lastPay, List<DateTime> markDates)
+        {
+            Id = increment;
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            LastPayment = lastPay;
+            MarkDates = markDates;
+        }
+
+        public User(int id, string surname, string name, string patronymic, DateTime lastPay)
+        {
+            Id = id;
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            LastPayment = lastPay;
+        }
+
+        public User(string surname, string name, string patronymic, DateTime lastPay)
+        {
+            Id = increment;
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            LastPayment = lastPay;
         }
 
     }
