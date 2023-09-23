@@ -97,14 +97,14 @@ namespace ProjectForGym
 
         private void TbxSearch_GotFocus(object sender, RoutedEventArgs e)
         {
-            TbckSearchText.Visibility = Visibility.Hidden;
+            TbkSearchText.Visibility = Visibility.Hidden;
         }
 
         private void TbxSearch_LostFocus(object sender, RoutedEventArgs e)
         {
             if (TbxSearch.Text == string.Empty)
             {
-                TbckSearchText.Visibility = Visibility.Visible;
+                TbkSearchText.Visibility = Visibility.Visible;
             }
         }
 

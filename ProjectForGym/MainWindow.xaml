@@ -25,43 +25,39 @@
         <Border VerticalAlignment="Bottom" Width="550" Margin="0 0 0 20">
             <Grid>
                 <TextBox x:Name="TbxSearch"
-                         FontSize="14"
-                         Padding="5 3" 
-                         BorderThickness="2"
-                         BorderBrush="DimGray" 
-                         Background="Transparent"
+                         Style="{StaticResource tbxSearchStyle}"
                          HorizontalAlignment="Left"
-                         Width="400"
                          TextChanged="TbxSearch_TextChanged"
                          GotFocus="TbxSearch_GotFocus"
                          LostFocus="TbxSearch_LostFocus"
-                         Panel.ZIndex="1">
+                         Panel.ZIndex="1"/>
 
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
-                        </Style>
-                    </TextBox.Resources>
-
-                </TextBox>
-
-                <TextBlock x:Name="TbckSearchText"
-                           FontSize="14"
+                <TextBlock x:Name="TbkSearchText"
                            Text="Поиск..."
+                           FontSize="16"
+                           FontWeight="Light"
                            Foreground="Gray"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
-                           Margin="7 2"
+                           Margin="7 0 0 1"
                            Panel.ZIndex="0"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
 
                     <TextBlock Text="по"
                                VerticalAlignment="Center"
-                               FontSize="14"
-                               Margin="5 0 7 0"/>
+                               FontSize="16"
+                               FontWeight="Light"
+                               Margin="5 0 6 3"/>
 
-                    <ComboBox x:Name="cmbSearch" Width="120" FontSize="14" SelectedIndex="0">
+                    <ComboBox Style="{DynamicResource ComboBoxStyle1}"
+                              x:Name="cmbSearch"
+                              Width="120" 
+                              Height="30"
+                              FontSize="16"
+                              FontWeight="Light"
+                              Padding="5 3"
+                              SelectedIndex="0">
                         <ComboBoxItem>ФИО</ComboBoxItem>
                         <ComboBoxItem>Имени</ComboBoxItem>
                         <ComboBoxItem>Фамилии</ComboBoxItem>
@@ -69,15 +65,15 @@
                     </ComboBox>
                 </StackPanel>
 
-                
+
             </Grid>
         </Border>
-        
+
         <!--Табличная часть-->
 
         <Border Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                CornerRadius="10" BorderBrush="DimGray" BorderThickness="2" MinWidth="600" MinHeight="400">
-            <Grid Margin="5">
+                CornerRadius="15" BorderBrush="DimGray" BorderThickness="2" MinWidth="600" MinHeight="400">
+            <Grid Margin="6">
                 <ListView x:Name="listViewUsers" FontSize="14">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
@@ -126,29 +122,12 @@
         <Grid Grid.Row="2">
             <Button x:Name="BtnAddUser"
                     Content="Добавить клиента"
+                    Style="{StaticResource btnDefaultStyle}"
                     HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
                     Margin="0 0 50 0"
                     Click="BtnAddUser_Click"/>
 
-            
-
-            <Grid.Resources>
-                <Style x:Name="txbInputStyle" TargetType="Button">
-                    <Setter Property="FontSize" Value="16" />
-                    <Setter Property="Background" Value="DimGray" />
-                    <Setter Property="BorderBrush" Value="Black" />
-                    <Setter Property="BorderThickness" Value="1" />
-                    <Setter Property="Padding" Value="5 3" />
-                    <Setter Property="Width" Value="150" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-
-                    <Style.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
-                        </Style>
-                    </Style.Resources>
-                </Style>
-            </Grid.Resources>
         </Grid>
         
     </Grid>
