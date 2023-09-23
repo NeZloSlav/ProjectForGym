@@ -9,36 +9,36 @@ namespace ProjectForGym.Database
 {
     public class UserDB
     {
-        private List<User> users = new List<User>();
+        private static List<User> users = new List<User>();
 
-        public UserDB()
+        static UserDB()
         {
-            users.Add(new User("Биба", "Биба", "Бибачов"));
-            users.Add(new User("Боба", "Боба", "Бобачов"));
-            users.Add(new User("Находнов", "Вячеслав", "Сергеевич"));
-            users.Add(new User("Петченко", "Алексей", "Валерьевич"));
+            users.Add(new User(1, "Биба", "Биба", "Бибачов"));
+            users.Add(new User(2, "Боба", "Боба", "Бобачов"));
+            users.Add(new User(3, "Находнов", "Вячеслав", "Сергеевич"));
+            users.Add(new User(4, "Петченко", "Алексей", "Валерьевич"));
         }
 
-        public List<User> GetUsers()
+        public static List<User> GetUsers()
         {
             return users;
         }
 
-        public User Add(string surname, string name, string patronymic)
+        public static User Add(int id, string surname, string name, string patronymic)
         {
-            User newUser = new User(surname, name, patronymic);
+            User newUser = new User(id, surname, name, patronymic);
             users.Add(newUser);
             return newUser;
         }
 
-        public void Delete(int id)
+        public static void Delete(int id)
         {
             users.Remove(users[id]);
         }
 
-        public void Update(int id, string surname, string name, string patronymic)
+        public static void Update(int id, string surname, string name, string patronymic)
         {
-            users[id] = new User(surname, name, patronymic);
+            users[id] = new User(id, surname, name, patronymic);
         }
 
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectForGym.Classes;
+using ProjectForGym.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +21,22 @@ namespace ProjectForGym.Windows
     /// </summary>
     public partial class EditUserWindow : Window
     {
+        private User? currentUser;
+        private bool IsEdit;
         public EditUserWindow()
         {
             InitializeComponent();
         }
 
-        public EditUserWindow(string surname, string name, string patronymic)
+        public EditUserWindow(User user)
         {
             InitializeComponent();
 
-            TbxSurname.Text = surname;
-            TbxName.Text = name;
-            TbxPatronymic.Text = patronymic;
+            currentUser = user;
+            
+            TbxSurname.Text = currentUser.Surname;
+            TbxName.Text = currentUser.Name;
+            TbxPatronymic.Text = currentUser.Patronymic;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,9 +49,44 @@ namespace ProjectForGym.Windows
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            IsEdit = true;
+
+            BtnEdit.IsEnabled = false;
             TbxSurname.IsEnabled = true;
             TbxName.IsEnabled = true;
             TbxPatronymic.IsEnabled = true;
+            BtnSave.IsEnabled = true;
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            DisenableForms();
+            UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text);
+
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsEdit)
+            {
+                DisenableForms();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        private void DisenableForms()
+        {
+            IsEdit = false;
+
+            TbxSurname.IsEnabled = false;
+            TbxName.IsEnabled = false;
+            TbxPatronymic.IsEnabled = false;
+            BtnSave.IsEnabled = false;
+            BtnEdit.IsEnabled = true;
+
         }
     }
 }

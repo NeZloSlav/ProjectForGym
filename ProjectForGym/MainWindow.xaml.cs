@@ -24,7 +24,6 @@ namespace ProjectForGym
     /// </summary>
     public partial class MainWindow : Window
     {
-        private UserDB userDB = new UserDB();
         public MainWindow()
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace ProjectForGym
 
         private void UpdateList()
         {
-            var currentList = userDB.GetUsers();
+            var currentList = UserDB.GetUsers();
 
             currentList = currentList.Where(c => (c.Surname + " " + c.Name + " " + c.Patronymic).ToLower().Contains(TbxSearch.Text.ToLower())).ToList();
 
@@ -59,7 +58,7 @@ namespace ProjectForGym
         {
             var boundData = (User)((Button)sender).DataContext;
 
-            EditUserWindow editUser = new EditUserWindow(boundData.Surname, boundData.Name, boundData.Patronymic);
+            EditUserWindow editUser = new EditUserWindow(boundData);
             editUser.ShowDialog();
 
             UpdateList();

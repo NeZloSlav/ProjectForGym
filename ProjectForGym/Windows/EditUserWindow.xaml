@@ -83,11 +83,18 @@
                     Margin="100 0 0 0"
                     Click="BtnEdit_Click"/>
 
+            <Button x:Name="BtnBack"
+                    Content="Отмена"
+                    VerticalAlignment="Center"
+                    Click="BtnBack_Click"/>
+
             <Button x:Name="BtnSave"
                     Content="Сохранить"
                     VerticalAlignment="Bottom" 
                     HorizontalAlignment="Left" 
-                    Margin="480,0,0,0"/>
+                    Margin="480,0,0,0" 
+                    Click="BtnSave_Click"
+                    IsEnabled="False"/>
 
             <Grid.Resources>
                 <Style x:Name="txbInputStyle" TargetType="Button">
