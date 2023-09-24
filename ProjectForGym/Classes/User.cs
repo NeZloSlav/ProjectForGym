@@ -9,7 +9,7 @@ namespace ProjectForGym.Classes
 {
     public class User
     {
-        public static readonly List<string> Tariff = new List<string>() { "5 дней", "10 дней", "Месяц", "3 месяца", "6 месяцев", "Год" };
+        public static readonly List<string> Tariffs = new List<string>() { "5 дней", "10 дней", "Месяц", "3 месяца", "6 месяцев", "Год" };
 
         public static int increment = UserDB.GetUsers().Count;
         public int Id { get; set; }

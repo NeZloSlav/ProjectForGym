@@ -24,6 +24,8 @@ namespace ProjectForGym.Windows
         public AddUserWindow()
         {
             InitializeComponent();
+
+            CmbTariff.ItemsSource = User.Tariffs;
         }
 
 

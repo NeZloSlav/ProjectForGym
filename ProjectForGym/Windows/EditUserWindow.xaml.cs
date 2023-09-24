@@ -32,6 +32,8 @@ namespace ProjectForGym.Windows
         {
             InitializeComponent();
 
+            CmbTariff.ItemsSource = User.Tariffs;
+
             currentUser = user;
             
             TbxSurname.Text = currentUser.Surname;

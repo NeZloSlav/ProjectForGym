@@ -69,7 +69,7 @@
         <Grid Grid.Row="2" VerticalAlignment="Center">
 
             <Button x:Name="BtnBack"
-                    Content="Отмена"
+                    Content="Назад"
                     HorizontalAlignment="Left"
                     Margin="100 0 0 0"
                     Style="{StaticResource btnDefaultStyle}" Click="BtnBack_Click"/>
@@ -77,12 +77,14 @@
             <Button x:Name="BtnDelete"
                     Content="Удалить"
                     HorizontalAlignment="Center"
+                    Visibility="Hidden"
                     Style="{StaticResource btnDefaultStyle}" Click="BtnDelete_Click"/>
 
             <Button x:Name="BtnSave"
                     Content="Отметить"
                     VerticalAlignment="Bottom" 
                     HorizontalAlignment="Right" 
+                    Background="ForestGreen"
                     Margin="0 0 100 0" 
                     Style="{StaticResource btnDefaultStyle}" Click="BtnSave_Click"/>
 

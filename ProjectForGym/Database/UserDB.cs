@@ -15,8 +15,8 @@ namespace ProjectForGym.Database
         {
             users.Add(new User(1, "Биба", "Биба", "Бибачов", DateTime.Parse("20.09.2023"), 1, new List<DateTime> {DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
             users.Add(new User(2, "Боба", "Боба", "Бобачов", DateTime.Parse("19.09.2023"), 2, new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
-            users.Add(new User(3, "Находнов", "Вячеслав", "Сергеевич", DateTime.Parse("18.09.2023"), 2, new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
-            users.Add(new User(4, "Петченко", "Алексей", "Валерьевич", DateTime.Parse("19.09.2023"), 3,new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
+            users.Add(new User(3, "Петров", "Петр", "Петрович", DateTime.Parse("18.09.2023"), 2, new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
+            users.Add(new User(4, "Пупкин", "Василий", "Игорьевич", DateTime.Parse("19.09.2023"), 3,new List<DateTime> { DateTime.Parse("20.09.2023"), DateTime.Parse("21.09.2023"), DateTime.Parse("22.09.2023") }));
         }
 
         public static List<User> GetUsers()

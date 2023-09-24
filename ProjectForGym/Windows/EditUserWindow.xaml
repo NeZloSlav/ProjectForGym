@@ -115,13 +115,8 @@
                               FontSize="17"
                               Padding="10 5 0 5"
                               Margin="0 3 0 0"
-                              IsEnabled="False">
+                              IsEnabled="False"/>
 
-                        <ComboBoxItem>10 дней</ComboBoxItem>
-                        <ComboBoxItem>Месяц</ComboBoxItem>
-                        <ComboBoxItem>3 месяца</ComboBoxItem>
-                    </ComboBox>
-                    
                 </StackPanel>
 
                 <Button x:Name="BtnDelete"
@@ -147,13 +142,14 @@
                     Click="BtnEdit_Click"/>
 
             <Button x:Name="BtnBack"
-                    Content="Отмена"
+                    Content="Назад"
                     Style="{StaticResource btnDefaultStyle}"
                     Click="BtnBack_Click"/>
 
             <Button x:Name="BtnSave"
                     Content="Сохранить"
                     HorizontalAlignment="Right" 
+                    Background="ForestGreen"
                     Margin="0 0 100 0" 
                     Style="{StaticResource btnDefaultStyle}"
                     Click="BtnSave_Click"

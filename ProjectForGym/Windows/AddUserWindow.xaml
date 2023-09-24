@@ -96,12 +96,7 @@
                               Style="{StaticResource ComboBoxStyle1}"
                               FontSize="17"
                               Padding="10 5 0 5"
-                              Margin="0 3 0 0">
-                        
-                        <ComboBoxItem>10 дней</ComboBoxItem>
-                        <ComboBoxItem>Месяц</ComboBoxItem>
-                        <ComboBoxItem>3 месяца</ComboBoxItem>
-                    </ComboBox>
+                              Margin="0 3 0 0"/>
 
 
 
@@ -117,7 +112,7 @@
         <Grid Grid.Row="2" VerticalAlignment="Center">
 
             <Button x:Name="BtnBack"
-                    Content="Отмена"
+                    Content="Назад"
                     HorizontalAlignment="Left"
                     Margin="100 0 0 0"
                     Style="{StaticResource btnDefaultStyle}"
@@ -127,6 +122,7 @@
                     Content="Сохранить"
                     HorizontalAlignment="Right" 
                     Margin="0 0 100 0" 
+                    Background="ForestGreen"
                     Style="{StaticResource btnDefaultStyle}"
                     Click="BtnSave_Click"/>
 
