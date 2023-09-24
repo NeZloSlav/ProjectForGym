@@ -37,6 +37,8 @@ namespace ProjectForGym.Windows
             TbxSurname.Text = currentUser.Surname;
             TbxName.Text = currentUser.Name;
             TbxPatronymic.Text = currentUser.Patronymic;
+            DtPickerLastPay.Text = currentUser.LastPayment.ToString();
+            CmbTariff.SelectedIndex = currentUser.TariffIndex;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -56,14 +58,15 @@ namespace ProjectForGym.Windows
             TbxName.IsEnabled = true;
             TbxPatronymic.IsEnabled = true;
             BtnSave.IsEnabled = true;
+            DtPickerLastPay.IsEnabled = true;
+            CmbTariff.IsEnabled = true;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             DisenableForms();
-            UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(dtPickerLastPay.Text));
+            UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(DtPickerLastPay.Text), CmbTariff.SelectedIndex);
             Close();
-
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -99,7 +102,8 @@ namespace ProjectForGym.Windows
             TbxPatronymic.IsEnabled = false;
             BtnSave.IsEnabled = false;
             BtnEdit.IsEnabled = true;
-
+            DtPickerLastPay.IsEnabled = false;
+            CmbTariff.IsEnabled = false;
         }
 
         

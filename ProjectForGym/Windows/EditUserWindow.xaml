@@ -13,44 +13,6 @@
         ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
 
-    <Window.Resources>
-        <Style x:Key="textBlockInputStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DimGray" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="TextAlignment" Value="Left" />
-            <Setter Property="Padding" Value="3 2" />
-        </Style>
-
-        <Style x:Key="textBoxInputStyle" TargetType="TextBox">
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="Width" Value="200" />
-            <Setter Property="Padding" Value="3 2" />
-            <Setter Property="IsEnabled" Value="False" />
-
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10" />
-                </Style>
-            </Style.Resources>
-        </Style>
-
-        <Style x:Key="txbInputStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Background" Value="DimGray" />
-            <Setter Property="BorderBrush" Value="Black" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Padding" Value="5 3" />
-            <Setter Property="Width" Value="120" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10" />
-                </Style>
-            </Style.Resources>
-        </Style>
-    </Window.Resources>
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -87,54 +49,57 @@
                 <StackPanel>
 
                     <TextBlock Text="Фамилия" 
-                           Style="{StaticResource textBlockInputStyle}"/>
+                           Style="{StaticResource tbInputStyle}"/>
 
                     <TextBox x:Name="TbxSurname" 
-                         Style="{StaticResource textBoxInputStyle}"
-                         Margin="0 3 0 20"/>
+                             Style="{StaticResource tbxInputStyle}"
+                             Margin="0 3 0 20"
+                             IsEnabled="False"/>
 
                 </StackPanel>
 
                 <StackPanel>
 
                     <TextBlock Text="Имя"
-                           Style="{StaticResource textBlockInputStyle}"/>
+                           Style="{StaticResource tbInputStyle}"/>
 
                     <TextBox x:Name="TbxName" 
-                         Style="{StaticResource textBoxInputStyle}"
-                         Margin="0 3 0 20"/>
+                             Style="{StaticResource tbxInputStyle}"
+                             Margin="0 3 0 20"
+                             IsEnabled="False"/>
 
                 </StackPanel>
 
                 <StackPanel>
 
                     <TextBlock Text="Отчество" 
-                           Style="{StaticResource textBlockInputStyle}"/>
+                           Style="{StaticResource tbInputStyle}"/>
 
                     <TextBox x:Name="TbxPatronymic"
-                         Style="{StaticResource textBoxInputStyle}"
-                         Margin="0 3 0 20"/>
+                             Style="{StaticResource tbxInputStyle}"
+                             Margin="0 3 0 20"
+                             IsEnabled="False"/>
 
                 </StackPanel>
 
             </StackPanel>
 
-            <StackPanel Margin="50 0 0 0">
+            <StackPanel Margin="80 0 0 0">
 
                 <StackPanel>
 
                     <TextBlock Text="Дата оплаты"
-                       Style="{StaticResource textBlockInputStyle}"/>
+                       Style="{StaticResource tbInputStyle}"/>
 
-                    <Border Width="200" 
-                            CornerRadius="10" 
-                            BorderBrush="Gray"
-                            BorderThickness="1" 
-                            Height="30"
+                    <Border Style="{StaticResource brdChooseDateStyle}"
                             Margin="0 3 0 20"
                             Padding="5 3">
 
-                        <DatePicker x:Name="dtPickerLastPay" FontSize="15" BorderThickness="0" Padding="0"/>
+                        <DatePicker x:Name="DtPickerLastPay"
+                                    FontSize="17" 
+                                    BorderThickness="0"
+                                    Padding="0"
+                                    IsEnabled="False"/>
 
                     </Border>
 
@@ -143,28 +108,29 @@
                 <StackPanel>
 
                     <TextBlock Text="Тариф"
-                       Style="{StaticResource textBlockInputStyle}"/>
+                       Style="{StaticResource tbInputStyle}"/>
 
-                    <ComboBox x:Name="cmb"
-                              FontSize="18"
-                              Height="30"
-                              Margin="0 3 0 0">
+                    <ComboBox x:Name="CmbTariff"
+                              Style="{StaticResource ComboBoxStyle1}"
+                              FontSize="17"
+                              Padding="10 5 0 5"
+                              Margin="0 3 0 0"
+                              IsEnabled="False">
 
                         <ComboBoxItem>10 дней</ComboBoxItem>
                         <ComboBoxItem>Месяц</ComboBoxItem>
                         <ComboBoxItem>3 месяца</ComboBoxItem>
                     </ComboBox>
-
-
-
+                    
                 </StackPanel>
 
                 <Button x:Name="BtnDelete"
-                        Style="{StaticResource txbInputStyle}"
+                        Style="{StaticResource btnDefaultStyle}"
                         Content="Удалить клиента"
                         Margin="0 50 0 0"
                         Width="auto"
                         Background="DarkRed"
+                        BorderBrush="White"
                         Click="BtnDelete_Click"/>
 
             </StackPanel>
@@ -177,19 +143,19 @@
                     Content="Редактировать"
                     HorizontalAlignment="Left" 
                     Margin="100 0 0 0"
-                    Style="{StaticResource txbInputStyle}"
+                    Style="{StaticResource btnDefaultStyle}"
                     Click="BtnEdit_Click"/>
 
             <Button x:Name="BtnBack"
                     Content="Отмена"
-                    Style="{StaticResource txbInputStyle}"
+                    Style="{StaticResource btnDefaultStyle}"
                     Click="BtnBack_Click"/>
 
             <Button x:Name="BtnSave"
                     Content="Сохранить"
                     HorizontalAlignment="Right" 
                     Margin="0 0 100 0" 
-                    Style="{StaticResource txbInputStyle}"
+                    Style="{StaticResource btnDefaultStyle}"
                     Click="BtnSave_Click"
                     IsEnabled="False"/>
 

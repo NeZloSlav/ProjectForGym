@@ -55,5 +55,18 @@ namespace ProjectForGym.Windows
         {
             Close();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var date in CldrMark.SelectedDates)
+            {
+                if (currentUser.MarkDates.Contains(date))
+                {
+                    currentUser.MarkDates.Remove(date);
+                }
+            }
+
+            Close();
+        }
     }
 }

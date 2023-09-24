@@ -114,6 +114,8 @@ namespace ProjectForGym
 
             MarkWindow markWindow = new MarkWindow(boundData);
             markWindow.ShowDialog();
+
+            UpdateList();
         }
     }
 }

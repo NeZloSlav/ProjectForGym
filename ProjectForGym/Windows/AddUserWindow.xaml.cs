@@ -49,7 +49,7 @@ namespace ProjectForGym.Windows
             }
             else
             {
-                UserDB.Add(TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(dtPickerLastPay.Text));
+                UserDB.Add(TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(DtPickerLastPay.Text), CmbTariff.SelectedIndex);
                 MessageBox.Show("Данные о клиенте занесены в базу", "Успешно!");
                 ClearForms();
             }
@@ -60,6 +60,7 @@ namespace ProjectForGym.Windows
             TbxSurname.Text = string.Empty;
             TbxName.Text = string.Empty;
             TbxPatronymic.Text = string.Empty;
+            DtPickerLastPay.Text = string.Empty;
         }
     }
 }
