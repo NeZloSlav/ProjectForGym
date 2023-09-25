@@ -34,92 +34,92 @@
 ### Главное окно
 При открытии приложения на главном окне отображается список всех клиентов. Строка поиска и выпадающий список обязаны помочь при поиске определённых клиентов. По умолчанию фильтрация в списке стоит по фамилии.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/0f9297a9-3d71-444e-bf07-ce9414d50bd0)
+![Снимок](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/c8ac9dcd-e8e6-4414-be74-b818a98a6ef7)
 
 Выпадающий список позволяет выполнять поиск по:  **ФИО**, **Имени**, **Фамилии**, **Дате**.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/c0a5448a-dbd0-446a-9570-187f332d3642)
+![Снимок7](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/c129243e-7799-40f9-960a-f45f002a6b7d)
 
 Первые три столбца таблицы отвечают за **фамилию**, **имя** и **отчество** занесённых в базу клиентов.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/394e7028-91a5-4087-97e0-257af169d64d)
+![Снимок2](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/7ef127a7-4177-427f-929b-3c93f0b3e01e)
 
 Столбец "**Посл. оплата**" содержит дату последей оплаты тарифа.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/e7902b9c-a753-4dc4-9b83-c83bf7d33db1)
+![Снимок3](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/c6195f1e-1d6d-468e-9401-f70dda3fecad)
 
 Столбец "**Осталось дней**" содержит количество дней, оставшихся до окончания периода оплаченного тарифа.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/9bd0db8f-25ca-4d20-bbe2-57c0256415f6)
+![Снимок4](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/981b9dcf-d254-4bbd-ab45-6934274e3645)
 
 Столбец "**Действие**" содержит две кнопки. Кнопка с символом "**+**" при нажатии открывает окно с журналом посещаемости. Кнопка с символом "**?**" при нажатии открывает окно редактирования клиента.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/6f63fb6c-c09a-4f24-83f9-a6c8ab343cef)
+![Снимок5](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/241da241-663b-4f75-a455-338882127a41)
 
 Кнопка "**Добавить клиента**" при нажатии открывает новое диалоговое окно, с помощью которого можно ввести информацию о новом клиенте.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/aff908e3-2412-4653-99da-4ce1b9d488c5)
+![Снимок6](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/99d10162-13f9-4207-a566-06b1eccae30b)
 
 ### Окно "Добавление нового клиента"
 Окно "**Добавление нового клиента**" содержит формы, с помощью которых можно ввести необходимую информацию о новом клиенте.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/274f7cbd-3b57-4464-a17a-463e9923ee13)
+![Снимок 20](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/29e2055c-2a9a-46c1-b204-24bce236c435)
 
 Большая часть полей для заполнения отображаются в таблице на главном окне, за исключением поля-выпадающего списка "**Тариф**". Оно содержит в себе доступные тарифы, от выбора которых будет зависеть отображение остатка дней в таблице на главном окне в столбце "**Осталось дней**". 
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/a63ea004-375d-4618-9aba-ca82f8e566b8)
+![Снимок10](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/ed74a6ee-561d-472f-8a32-1574a071b138)
 
 При нажатии кнопки "**Назад**" текущее окно будет закрыто, а главное окно будет отображено.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/7e1875f1-6ae2-4a91-8bea-680caafdd16f)
+![Снимок8](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/60ea1493-89d3-4f94-b85c-f7d9d9449591)
 
 После введения данных о клиенте следует нажать кнопку "**Сохранить**" для занесения и сохранения информации в базу данных.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/729d7a8c-a8e0-4a2b-9376-a4b5f9dd1668)
+![Снимок9](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/ad29ed1a-7ab7-4845-aa77-12bea71726ad)
 
 ### Окно "Редактирование клиента"
 Окно "**Редактирование клиента**" содержит формы, в которых заполнена информация о выбранном клиенте. Поля не доступны для редактирования по умолчанию. Для внесения изменений нужно нажать кнопку "**Редактировать**", а для сохранения изменений "**Сохранить**".
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/029005db-4f53-4240-95c8-1e9552fb4829)
+![Снимок 22](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/a4b10a73-b6ba-4f8c-82b3-7b98ba458acf)
 
 При нажатии кнопки "**Удалить клиента**" будет удалена вся информация о клиенте из базы данных.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/94737b3a-ffb2-4395-bb11-b2e6868418f2)
+![Снимок11](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/b2f2714e-cfe4-419e-8edc-56f2b17078a4)
 
 Кнопка "**Редактировать**" делает активными поля с данными, что позволяет вносить какие-либо изменения.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/3655e8b8-1360-4ddf-a278-a26a79286046)
+![Снимок12](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/2377292e-0057-41f4-b50f-41394faa97b3)
 
 Кнопка "**Назад**" позволяет отменить внесение изменений, если была нажата кнопка "Редактировать", или же закрывает текущее окно, открывая главное.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/139b9bca-56c2-4aee-a985-09eae8a5acf7)
+![Снимок13](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/4fb7725c-d8c7-4cad-98bc-841b8155a342)
 
 Кнопка "**Сохранить**" становится активной после нажатия кнопки "Редактировать" и позволяет сохранить изменения в базу данных.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/bcb17b7f-91ee-40d5-9921-23edf06fb6dd)
+![Снимок14](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/0324446d-7dd5-44bb-b23f-e93772058b37)
 
 ### Окно "Журнал посещаемости"
 Окно "**Журнал посещаемости**" содержит календарь с днями посещений клиентом спортзала, которые отмечены крестиками "х". 
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/e1661c31-cbe1-49dc-bad1-8e0f7afe104b)
+![Снимок 21](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/25e208a6-9ee7-4a89-b2fd-c16a4cf299f0)
 
 Выбрать дату можно щёлкнув на календаре по квадрату с нужной датой. При необходимости вделения нескольих дат, требуется зажать клавишу "ctrl" и щёлкнуть на календаре по нескольким датам.
 
 Одна выделенная дата:
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/98486e32-5624-45ab-a60b-6575f3d29cca)
+![Снимок17](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/7a9f8339-cf0e-43d3-b4b1-5e74ea35e7d1)
 
 Несколько выделенных дат:
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/f021d942-1e38-4f66-9728-21ca4f1f955a)
+![Снимок18](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/b32aed2b-68f8-4248-ade1-c5edf32a788e)
 
 Кнопка "Назад" позволит вернуться обратно на главное окно.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/8c8a85d7-2d65-49d7-abd5-3190ec5d1cff)
+![Снимок15](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/5666ad9d-d707-437e-8c1d-1a22ea6146df)
 
 Кнопка "Отметить" сохранит дату/даты в базе данных, после чего они станут отображаться датами с крестиком на календаре.
 
-![image](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/880723ff-8c6d-4065-8350-66bad3c55523)
+![Снимок16](https://github.com/NeZloSlav/ProjectForGym/assets/107403672/d60423b8-8ceb-456b-88d5-ae6374e17b92)
 
 ## Предварительные итоги
 По завершению предварительных работ по разработке приложения для введения журнала посещаемости для работников спортзала, можно выделить некоторое количество возможных дополнений. Одними из таких дополнений может стать:
