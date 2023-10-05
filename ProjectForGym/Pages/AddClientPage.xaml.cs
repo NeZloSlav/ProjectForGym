@@ -31,7 +31,7 @@ namespace ProjectForGym.Pages
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            //Close();
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
