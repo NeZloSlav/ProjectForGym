@@ -1,5 +1,7 @@
 ﻿using ProjectForGym.Classes;
+using ProjectForGym.ClassHelper;
 using ProjectForGym.Database;
+using ProjectForGym.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +29,11 @@ namespace ProjectForGym
         {
             InitializeComponent();
 
-            FrmContent.Navigate(ClassHelper.NavigateClass.currentPage);
+            NavigateClass.frmNavigate = FrmContent;
+
+            ListPage listPage = new ListPage();
+
+            FrmContent.Navigate(listPage);
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

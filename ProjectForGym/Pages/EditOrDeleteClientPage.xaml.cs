@@ -1,4 +1,5 @@
 ﻿using ProjectForGym.Classes;
+using ProjectForGym.ClassHelper;
 using ProjectForGym.Database;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace ProjectForGym.Pages
         {
             DisenableForms();
             UserDB.Update(currentUser.Id, TbxSurname.Text, TbxName.Text, TbxPatronymic.Text, DateTime.Parse(DtPickerLastPay.Text), CmbTariff.SelectedIndex);
-            //Close();
+            NavigateClass.frmNavigate.GoBack();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -74,7 +75,7 @@ namespace ProjectForGym.Pages
             }
             else
             {
-                //Close();
+                NavigateClass.frmNavigate.GoBack();
             }
         }
 
@@ -85,7 +86,7 @@ namespace ProjectForGym.Pages
             if (answer == MessageBoxResult.Yes)
             {
                 UserDB.Delete(currentUser.Id);
-                //Close();
+                NavigateClass.frmNavigate.GoBack();
             }
 
         }

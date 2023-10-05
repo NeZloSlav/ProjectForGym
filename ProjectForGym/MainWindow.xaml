@@ -12,5 +12,5 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown">
 
-    <Frame x:Name="FrmContent"/>
+    <Frame x:Name="FrmContent" NavigationUIVisibility="Hidden"/>
 </Window>

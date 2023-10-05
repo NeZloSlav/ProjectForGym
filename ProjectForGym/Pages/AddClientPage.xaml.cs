@@ -1,4 +1,5 @@
 ﻿using ProjectForGym.Classes;
+using ProjectForGym.ClassHelper;
 using ProjectForGym.Database;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace ProjectForGym.Pages
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            //Close();
+            NavigateClass.frmNavigate.GoBack();
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)

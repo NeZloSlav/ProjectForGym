@@ -9,7 +9,7 @@ namespace ProjectForGym.ClassHelper
 {
     public class NavigateClass
     {
-        public static Page currentPage = new Page();
+        public static Frame frmNavigate;
 
     }
 }

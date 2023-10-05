@@ -1,4 +1,5 @@
 ﻿using ProjectForGym.Classes;
+using ProjectForGym.ClassHelper;
 using ProjectForGym.Database;
 using System;
 using System.Collections.Generic;
@@ -70,16 +71,18 @@ namespace ProjectForGym.Pages
         {
             var boundData = (User)((Button)sender).DataContext;
 
-            //EditUserWindow editUser = new EditUserWindow(boundData);
-            //editUser.ShowDialog();
+            EditOrDeleteClientPage editOrDeleteClientPage = new EditOrDeleteClientPage(boundData);
+
+            NavigateClass.frmNavigate.Navigate(editOrDeleteClientPage);
 
             UpdateList();
         }
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            //AddUserWindow addUser = new AddUserWindow();
-            //addUser.ShowDialog();
+            AddClientPage addClientPage = new AddClientPage();
+
+            NavigateClass.frmNavigate.Navigate(addClientPage);
 
             UpdateList();
         }
@@ -101,8 +104,9 @@ namespace ProjectForGym.Pages
         {
             var boundData = (User)((Button)sender).DataContext;
 
-            //MarkWindow markWindow = new MarkWindow(boundData);
-            //markWindow.ShowDialog();
+            MarkClientPage markClientPage = new MarkClientPage(boundData);
+
+            NavigateClass.frmNavigate.Navigate(markClientPage);
 
             UpdateList();
         }

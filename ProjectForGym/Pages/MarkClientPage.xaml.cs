@@ -1,4 +1,5 @@
 ﻿using ProjectForGym.Classes;
+using ProjectForGym.ClassHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,12 +50,12 @@ namespace ProjectForGym.Pages
 
             MessageBox.Show("Выделенные даты занесены в базу.", "Успех!");
 
-            //Close();
+            NavigateClass.frmNavigate.GoBack();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            //Close();
+            NavigateClass.frmNavigate.GoBack();
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -67,7 +68,7 @@ namespace ProjectForGym.Pages
                 }
             }
 
-            //Close();
+            NavigateClass.frmNavigate.GoBack();
         }
     }
 }
