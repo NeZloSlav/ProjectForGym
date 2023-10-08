@@ -8,6 +8,8 @@
         Title="MainWindow"
         Height="600"
         Width="700"
+        MinHeight="600"
+        MinWidth="700"
         WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown">

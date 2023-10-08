@@ -74,8 +74,6 @@ namespace ProjectForGym.Pages
             EditOrDeleteClientPage editOrDeleteClientPage = new EditOrDeleteClientPage(boundData);
 
             NavigateClass.frmNavigate.Navigate(editOrDeleteClientPage);
-
-            UpdateList();
         }
 
         private void BtnAddUser_Click(object sender, RoutedEventArgs e)
@@ -83,8 +81,6 @@ namespace ProjectForGym.Pages
             AddClientPage addClientPage = new AddClientPage();
 
             NavigateClass.frmNavigate.Navigate(addClientPage);
-
-            UpdateList();
         }
 
         private void TbxSearch_GotFocus(object sender, RoutedEventArgs e)
@@ -107,7 +103,10 @@ namespace ProjectForGym.Pages
             MarkClientPage markClientPage = new MarkClientPage(boundData);
 
             NavigateClass.frmNavigate.Navigate(markClientPage);
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
             UpdateList();
         }
     }
