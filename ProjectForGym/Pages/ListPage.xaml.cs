@@ -1,6 +1,8 @@
-﻿using ProjectForGym.Classes;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjectForGym.Classes;
 using ProjectForGym.ClassHelper;
 using ProjectForGym.Database;
+using ProjectForGym.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +25,18 @@ namespace ProjectForGym.Pages
     /// </summary>
     public partial class ListPage : Page
     {
+        private readonly ProductContext _context = new ProductContext();
+
+        private CollectionViewSource categoryViewSource;
+
         public ListPage()
         {
             InitializeComponent();
 
-            UpdateList();
+            categoryViewSource =
+                (CollectionViewSource)FindResource(nameof(categoryViewSource));
+
+            //UpdateList();
         }
 
         private void TbxSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -107,7 +116,16 @@ namespace ProjectForGym.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdateList();
+            _context.Database.EnsureCreated();
+
+            // load the entities into EF Core
+            _context.Tariffs.Load();
+
+            // bind to the source
+            categoryViewSource.Source =
+                _context.Tariffs.Local.ToObservableCollection();
+
+            //UpdateList();
         }
     }
 }
